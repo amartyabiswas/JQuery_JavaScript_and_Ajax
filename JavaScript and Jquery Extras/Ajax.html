@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ajax Basics</title>
+</head>
+<body>
+<div id="demo">
+    <h2>Let AJAX change this text</h2>
+    <button type="button" onclick="loadDoc()">Change Content</button>
+</div>
+
+<ol>
+    <li>
+        1. An event occurs in a web page (the page is loaded, a button is clicked)<br>
+        2. An XMLHttpRequest object is created by JavaScript<br>
+        3. The XMLHttpRequest object sends a request to a web server<br>
+        4. The server processes the request<br>
+        5. The server sends a response back to the web page<br>
+        6. The response is read by JavaScript<br>
+        7. Proper action (like page update) is performed by JavaScript<br>
+    </li>
+</ol>
+
+<h4>The onreadystatechange event is triggered four times (1-4), one time for each change in the readyState.</h4>
+
+<script src="Ajax.js"></script>
+</body>
+</html>

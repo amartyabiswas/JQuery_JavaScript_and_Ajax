@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CallBack in Ajax</title>
+</head>
+<body>
+
+<div id="demo">
+
+    <h2 id="header">The XMLHttpRequest Object  </h2><br>
+    <h3>The getResponseHeader() method returns specific header information from the server response.
+        The getAllResponseHeaders() method returns all header information from the server response.</h3>
+
+
+
+    <button type="button"
+            onclick="loadDoc('ajaxURL.txt', myFunction)">Change Content
+    </button>
+</div>
+
+<script>
+    function loadDoc(url, cFunction) {
+        var xhttp;
+        xhttp=new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                //Callback of myFunction, here this is xhttp
+                cFunction(this);
+            }
+        };
+        xhttp.open("GET", url, true);
+        xhttp.send();
+    }
+    function myFunction(xhttp) {
+        /*document.getElementById("demo").innerHTML =
+            xhttp.responseText;*/
+        /*document.getElementById("demo").innerHTML =
+            xhttp.getResponseHeader("Last-Modified");*/
+        document.getElementById("demo").innerHTML =
+            xhttp.getAllResponseHeaders();
+    }
+</script>
+</body>
+</html>
